@@ -10,4 +10,19 @@ function gerarNumeroNaoContido(min, max, array){
         gerarNumeroNaoContido(min, max, array) :
         aleatorio
 }
-console.log(gerarNumeroNaoContido(1, 60, [15,49,27,30,26,58]))
+
+function gerarNumeros(qtd){
+    const numeros = Array(qtd)
+        .fill(0)
+        .reduce((nums) => {
+            const novoNum = gerarNumeroNaoContido(1, 60, nums)
+            return [ ...nums, novoNum]
+        }, [])
+        .sort((n1 ,n2) => n1-n2)
+
+
+
+    return numeros
+}
+
+console.log(gerarNumeros(7))
