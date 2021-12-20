@@ -3,6 +3,9 @@ import React from 'react';
 
 import Card from './components/layout/Card'
 
+import Contador from './components/contador/Contador'
+import Input from './components/formulario/Input'
+import './components/comunicacao/DiretaPai'
 import Usuarioinfo from './components/condicional/Usuarioinfo';
 import ParOuImpar from './components/condicional/ParOuImpar';
 import ListaProdutos from './components/repeticao/ListaProdutos'
@@ -13,14 +16,32 @@ import Aleatorio from './components/basicos/Aleatorio'
 import Primeiro from './components/basicos/Primeiro';
 import ComParametro from './components/basicos/ComParametro';
 import Fragmento from './components/basicos/Fragmento';
+import DiretaPai from './components/comunicacao/DiretaPai';
+import IndiretaPai from './components/comunicacao/IndiretaPai';
 
-
+// eslint-disable-next-line import/no-anonymous-default-export
 export default () =>{
     return(
         <div className="App">
             <h1>Fundamentos React</h1>
 
             <div className='Cards'>
+                <Card titulo='#12 - Contador' color='#424242'>
+                   <Contador numInicial={10}></Contador>
+                </Card>
+
+                <Card titulo='#11 - Componente Controlado(Input)' color='#E45F56'>
+                    <Input />
+                </Card>
+
+                <Card titulo='#10 - Comunicação Indireta' color='#0000FF'>
+                    <IndiretaPai></IndiretaPai>
+                </Card>
+                
+                <Card titulo='#09 - Comunicação Direta' color='#59323C'>
+                  <DiretaPai></DiretaPai>
+                </Card>
+
                 <Card titulo='#08 - Renderização Condicional' color='#54b825'>
                     <ParOuImpar numero={6}/>
                     <Usuarioinfo usuario={{ nome: 'Fernando' }} />
